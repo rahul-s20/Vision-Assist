@@ -1,7 +1,5 @@
 import speech_recognition as sr
 import pyttsx3
-from queue import Queue
-from threading import Thread
 import multiprocessing
 import keyboard
 
