@@ -2,6 +2,7 @@ import speech_recognition as sr
 import pyttsx3
 import multiprocessing
 import keyboard
+from utils.config import THRESHOLD
 
 
 class VoiceAssistant:
@@ -13,7 +14,7 @@ class VoiceAssistant:
             with sr.Microphone(device_index=1) as source:
                 print("Listening....")
                 self.r.pause_threshold = 1
-                self.r.energy_threshold = 1000
+                self.r.energy_threshold = THRESHOLD
                 audio = self.r.listen(source)
                 print("Recognizing....")
                 query = self.r.recognize_google(audio, language='en-in')

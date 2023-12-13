@@ -1,3 +1,15 @@
 ['Microsoft Sound Mapper - Input', 'Microphone (High Definition Aud', 'Microsoft Sound Mapper - Output', 'Headphones (High Definition Aud', 'Q24i-20 (NVIDIA High Definition', 'Primary Sound Capture Driver', 'Microphone (High Definition
  Audio Device)', 'Primary Sound Driver', 'Headphones (High Definition Audio Device)', 'Q24i-20 (NVIDIA High Definition Audio)', 'Headphones (High Definition Audio Device)', 'Q24i-20 (NVIDIA High Definition Audio)', 'Microphone (High De
 finition Audio Device)', 'Output (NVIDIA High Definition Audio)', 'Microphone (HD Audio Microphone)', 'Headphones (HD Audio Headphone)']
+
+
+def install():
+    print "In install"
+
+methods = {'install': install}
+
+method_name = 'install' # set by the command line options
+if method_name in methods:
+    methods[method_name]() # + argument list of course
+else:
+    raise Exception("Method %s not implemented" % method_name)
