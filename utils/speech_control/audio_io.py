@@ -15,7 +15,7 @@ class VoiceAssistant:
                 print("Listening....")
                 self.r.pause_threshold = 1
                 self.r.energy_threshold = THRESHOLD
-                audio = self.r.listen(source)
+                audio = self.r.listen(source, 10, 6)
                 print("Recognizing....")
                 query = self.r.recognize_google(audio, language='en-in')
                 print(f"User said : {query}\n")

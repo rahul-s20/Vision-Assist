@@ -9,7 +9,7 @@ SET JWT_SECRET=rsarkar123456
 SET MONGODB_URI=mongodb://localhost:27017/vision_dev
 SET TIMEZONE=Asia/Kolkata
 
-SET THRESHOLD=1000
+SET THRESHOLD=900
 SET ELECTRICAL_CONN=http://192.168.1.22/
 
 echo ====================== Vision2Reality ========================

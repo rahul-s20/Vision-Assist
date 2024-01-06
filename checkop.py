@@ -17,7 +17,7 @@
 #
 # print("Done")
 
-from modules.skl_training_uc import main_train
-main_train()
+import modules.skl_train
+# main_train()
 
 # from modules import  skl_train
