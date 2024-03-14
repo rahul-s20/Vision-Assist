@@ -22,3 +22,11 @@ def main_train():
         print("Training completed")
     else:
         raise ValueError("Something went wrong")
+
+
+def main_train_txt(data):
+    x = train_existing_model(data_df=data)
+    if x:
+        print("Training completed")
+    else:
+        raise ValueError("Something went wrong")
