@@ -10,7 +10,7 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
-connect(host=MONGO_URI)
+# connect(host=MONGO_URI)
 
 print('Connected to DB')
 
