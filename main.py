@@ -20,6 +20,14 @@ def run():
     hh_obj = HouseHold()
     while True:
         speech = va_obj.take_speech()
+        if 'fan' in speech or 'light' in speech:
+            out = predict(speech)
+            if '_func' in out:
+                eval(out)
+                va_obj.say("Done")
+            else:
+                va_obj.say(out)
+
         if 'vision' in speech:
             out = predict(speech)
             print(out)

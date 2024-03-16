@@ -20,11 +20,11 @@
 # import modules.skl_train
 # main_train()
 
-# from modules import  skl_train
+from modules import  skl_train
 
-import speech_recognition as sr
+# import speech_recognition as sr
 
-with sr.Microphone() as source:    # open the microphone and start recording
-    sx = source.list_microphone_names()
-    p = source.list_working_microphones()
-    print(p)
+# with sr.Microphone() as source:    # open the microphone and start recording
+#     sx = source.list_microphone_names()
+#     p = source.list_working_microphones()
+#     print(p)

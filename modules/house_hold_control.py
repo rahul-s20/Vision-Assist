@@ -25,3 +25,15 @@ class HouseHold:
             return res
         else:
             raise ValueError(f"something went wrong in electrical control -> {alias} and {is_on}")
+        
+    def el_vision_control_func(self, device: str, mode: str, url: str = 'https://visionapi.loca.lt/api/v1/VisionHome/switch'):
+        """
+        segment = 25(light) / 27(fan)
+        is_on = on / off
+        """
+        if mode == 'on' or mode == 'off':
+            print(f'{url}?device={device}&mode={mode}')
+            res = self.session.post(f'{url}?device={device}&mode={mode}')
+            return res
+        else:
+            raise ValueError(f"something went wrong in electrical control -> {device} and {mode}")    

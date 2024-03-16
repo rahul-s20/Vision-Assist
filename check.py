@@ -1,30 +1,7 @@
-import requests
+from brain_cell.skl_model import train_existing_model
+from brain_cell.preprocessing import Preprocessing
 
+data = Preprocessing(dataset_path='dataset/chatbot_dataset.txt')
 
-class HouseHold:
-    def __init__(self):
-        self.session = requests.Session()
-        # self.session.headers = {
-        #     "User-Agent": "Mozilla/5.0 (X11; CrOS x86_64 12871.102.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.141 Safari/537.36",
-        #     "Accept-Encoding": "*",
-        #     "Connection": "keep-alive"
-        # }
-        # self.session.headers ={
-        #     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
-        #                   "Chrome/51.0.2704.103 Safari/537.36"}
-
-    def el_control_func(self, alias: str, pin_no: str,  is_on: str, url: str = 'http://192.168.1.22/'):
-        """
-        segment = 25(light) / 27(fan)
-        is_on = on / off
-        """
-        if is_on == 'on' or is_on == 'off':
-            print(f'{url}{alias}?state={is_on}&out_put={pin_no}')
-            res = self.session.get(f'{url}{alias}?state={is_on}&out_put={pin_no}')
-            return res
-        else:
-            raise ValueError(f"something went wrong in electrical control -> {alias} and {is_on}")
-
-hh = HouseHold()
-# hh.el_control_func(alias='switchFan', pin_no='25', is_on='on')
-hh.el_control_func(alias='switchLight', pin_no='27', is_on='off')
+res = train_existing_model(data_df=data())
+print("Re Training completed")
