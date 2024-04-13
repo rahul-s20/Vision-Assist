@@ -4,6 +4,12 @@ import multiprocessing
 import keyboard
 from utils.config import THRESHOLD
 
+def callback(recognizer, audio):                          # this is called from the background thread
+    try:
+        print("You said " + recognizer.recognize(audio))  # received audio data, now need to recognize it
+    except LookupError:
+        print("Oops! Didn't catch that")
+
 
 class VoiceAssistant:
     def __init__(self):
@@ -13,10 +19,12 @@ class VoiceAssistant:
         try:
             with sr.Microphone(device_index=1) as source:
                 print("Listening....")
-                self.r.pause_threshold = 1
+                self.r.adjust_for_ambient_noise(source)      
+                # self.r.pause_threshold = 1
                 self.r.energy_threshold = THRESHOLD
-                audio = self.r.listen(source, 10, 6)
-                print("Recognizing....")
+                audio = self.r.listen(source, 5, 6)
+                # stop_listening = self.r.listen_in_background(source, callback)
+                print("Recognizing....", audio.sample_rate)
                 query = self.r.recognize_google(audio, language='en-in')
                 print(f"User said : {query}\n")
                 return query
