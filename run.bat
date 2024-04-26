@@ -12,5 +12,7 @@ SET TIMEZONE=Asia/Kolkata
 SET THRESHOLD=500
 SET ELECTRICAL_CONN=http://192.168.1.22/
 
+
+
 echo ====================== Vision2Reality ========================
-python -c "from main import run; run()"
+venv/Scripts/activate.bat & venv\Scripts\python -c "from main import run; run()"
