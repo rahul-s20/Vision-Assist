@@ -15,4 +15,4 @@ SET ELECTRICAL_CONN=http://192.168.1.22/
 
 
 echo ====================== Vision2Reality ========================
-venv/Scripts/activate.bat & venv\Scripts\python -c "from main import run; run()"
+venv\Scripts\activate.bat & venv\Scripts\python -c "from main import run; run()"
